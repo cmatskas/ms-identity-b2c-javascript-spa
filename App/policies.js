@@ -6,19 +6,19 @@
 const b2cPolicies = {
     names: {
         signUpSignIn: "b2c_1_susi",
-        forgotPassword: "b2c_1_reset",
+        forgotPassword: "b2c_1_password_reset",
         editProfile: "b2c_1_edit_profile"
     },
     authorities: {
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi",
+            authority: "https://cmatdevb2c.b2clogin.com/cmatdevb2c.onmicrosoft.com/b2c_1_susi",
         },
         forgotPassword: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_reset",
+            authority: "https://cmatdevb2c.b2clogin.com/cmatdevb2c.onmicrosoft.com/b2c_1_password_reset",
         },
         editProfile: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile"
+            authority: "https://cmatdevb2c.b2clogin.com/cmatdevb2c.onmicrosoft.com/b2c_1_edit_profile"
         }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "cmatdevb2c.b2clogin.com"
 }
