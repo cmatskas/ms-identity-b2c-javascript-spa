@@ -19,6 +19,16 @@ function welcomeUser(username) {
     welcomeDiv.innerHTML = `Welcome ${username}!`
 }
 
+function goodbyUser() {
+    label.classList.remove('d-none');
+    signInButton.classList.remove('d-none');
+    signOutButton.classList.add('d-none');
+    titleDiv.classList.remove('d-none');
+    editProfileButton.classList.add('d-none');
+    welcomeDiv.classList.add('d-none');
+    welcomeDiv.innerHTML = ``
+}
+
 function logMessage(s) {
     response.appendChild(document.createTextNode('\n' + s + '\n'));
 }
