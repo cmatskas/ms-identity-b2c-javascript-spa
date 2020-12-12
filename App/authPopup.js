@@ -7,7 +7,7 @@ let username = "";
 
 function selectAccount () {
 
-    /**
+    /*
      * See here for more info on account retrieval: 
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
      */
@@ -30,10 +30,11 @@ function selectAccount () {
 selectAccount();
 
 function handleResponse(response) {
-    /**
-     * To see the full list of response object properties, visit:
-     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response
-     */
+    
+    /*
+    * To see the full list of response object properties, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response
+    */
 
     if (response !== null) {
         accountId = response.account.homeAccountId;
@@ -46,10 +47,10 @@ function handleResponse(response) {
 
 function signIn() {
 
-    /**
-     * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
-     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
-     */
+    /*
+    * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
+    */
 
     myMSALObj.loginPopup(loginRequest)
         .then(handleResponse)
@@ -74,7 +75,6 @@ function signOut() {
      * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
      */
-
     // Choose which account to logout from.
     
     const logoutRequest = {
@@ -90,11 +90,12 @@ function editProfile() {
 }
 
 function handlePolicyChange(response) {
-    /**
-     * We need to reject id tokens that were not issued with the default sign-in policy.
-     * "acr" claim in the token tells us what policy is used (NOTE: for new policies (v2.0), use "tfp" instead of "acr").
-     * To learn more about B2C tokens, visit https://docs.microsoft.com/en-us/azure/active-directory-b2c/tokens-overview
-     */
+    
+    /*
+    * We need to reject id tokens that were not issued with the default sign-in policy.
+    * "acr" claim in the token tells us what policy is used (NOTE: for new policies (v2.0), use "tfp" instead of "acr").
+    * To learn more about B2C tokens, visit https://docs.microsoft.com/en-us/azure/active-directory-b2c/tokens-overview
+    */
 
     if (response.idTokenClaims['acr'] === b2cPolicies.names.editProfile) {
         window.alert("Profile has been updated successfully. \nPlease sign-in again.");
